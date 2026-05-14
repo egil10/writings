@@ -76,6 +76,13 @@ A condensed, paper-length successor to the master's thesis above, reframed aroun
 
 ---
 
+### [STK-MAT2011 — Hidden Markov Models for High Frequency FX Pairs Trading](./STK-MAT2011%20-%20Hidden%20Markov%20Models%20for%20High%20Frequency%20FX%20Pairs%20Trading.pdf)
+> Bachelor's thesis · University of Oslo · Spring 2026 · supervised by Gudmund Horn Hermansen
+
+Do Hidden Markov Models add value to a classical pairs-trading rule on high-frequency FX tick data? Using Dukascopy bid–ask ticks for AUD/USD–NZD/USD, EUR/NOK–EUR/SEK, and GBP/USD–EUR/USD across three independent monthly episodes (August 2024, December 2024, April 2025), I build a rolling cointegration spread and treat the textbook *z*-score rule as the baseline. A **Markov-switching AR(1)** fitted to the same spread is used as a *regime gate* on top of that baseline — not as an independent forecaster — switching trading off in high-volatility drifting regimes. Under realistic per-day refits, half-spread costs, and walk-forward scoring, the cointegration baseline loses money on every pair-month; the HMM gate cuts those losses by **75–85%** but never crosses into profit, and the continuous MS-AR threshold variant fails to improve on the binary AR gate — an honest negative finding. Passive Buy & Hold beats all three active strategies on a Sharpe basis in seven of nine pair-months, including the spring-2025 tariff episode in which a unit long-spread position on EUR/NOK–EUR/SEK earns **+528 bps** on the same data on which the cointegration rule loses **−19,906 bps**.
+
+---
+
 ## About
 
 These are projects I worked on and am proud of. The machine learning work spans finance, physics, and football. The operations-research and business-analytics work covers LP/MILP modelling, forecasting, and database design. The quantum computing work gets into territory I genuinely find fascinating. Everything is written in Python unless noted otherwise (BAN402 uses AMPL/CPLEX; BAN401 mixes Python, R, and SQL).
