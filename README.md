@@ -69,6 +69,13 @@ The Variational Quantum Eigensolver (VQE) is one of the most promising near-term
 
 ---
 
+### [FYS5429 — PINNs for Options Pricing](./FYS5429%20-%20PINNs%20for%20Options%20Pricing.pdf)
+> Advanced Machine Learning and Data Analysis for the Physical Sciences (FYS5429) · University of Oslo · Spring 2026
+
+Can a single deep-learning framework price options *and* calibrate the model behind them? This project uses **Physics-Informed Neural Networks (PINNs)** to embed option-pricing PDEs directly into the training loss, so the learned price surface is constrained to satisfy the underlying financial model rather than merely interpolating data. The framework is built in three stages of increasing difficulty: (i) the textbook constant-volatility **Black–Scholes** PDE as a controlled benchmark against the closed-form price; (ii) the three-dimensional **Heston** stochastic-volatility PDE with its mixed-derivative term, benchmarked against a semi-analytical Fourier-quadrature reference; and (iii) an **inverse Heston** problem in which the structural parameters (κ, θ, ξ, ρ) are made trainable — reparameterised through softplus / tanh bijections, jointly optimised with a Feller penalty under a two-stage Adam + L-BFGS schedule — and recovered from 200 noisy synthetic prices. The Black–Scholes PINN reproduces the analytical call price to within **0.56%** at the at-the-money point (PDE residual ~10⁻³, 12 min on a single GPU). The Heston PINN prices the three-dimensional surface to within **0.44%** of the Fourier benchmark. On inverse Heston, the calibrated network fits the observed prices essentially perfectly (R² ≈ 0.999999, median relative pricing error ≈ 0.02%) — yet the recovered correlation has the **wrong sign** (ρ̂ = +0.994 against true ρ = −0.7). That negative finding is the central pedagogical point: a near-perfect price fit does not imply structural parameter recovery, because ρ enters the Heston PDE only through the mixed term ρξvSV_Sv and is identifiable only from implied-volatility skew that 200 sparsely placed prices cannot carry.
+
+---
+
 ### [Quant Awards — Exploiting the Index Effect on the Oslo Stock Exchange Benchmark Index using Machine Learning](./Quant%20Awards%20-%20Egil%20Furnes%20-%20Norwegian%20School%20of%20Economics.pdf)
 > Working paper · Norwegian School of Economics (NHH) · 2025
 
