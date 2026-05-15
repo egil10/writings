@@ -1191,7 +1191,7 @@
     const featuredOrder = writings.filter((w) => w.featured);
 
     function fileURL(file) {
-      return "/" + encodeURI(file);
+      return encodeURI(file);
     }
 
     function renderSignals() {

@@ -1,10 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/web/index.html" },
-    { "source": "/(.*\\.pdf)", "destination": "/web/$1" }
-  ],
   "headers": [
     {
       "source": "/(.*).pdf",
